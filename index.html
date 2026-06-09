@@ -1,0 +1,1270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 3: Reviewing Your Learning Plan</title>
+<style>
+  :root {
+    --teal-50: #E1F5EE;
+    --teal-100: #9FE1CB;
+    --teal-200: #5DCAA5;
+    --teal-400: #1D9E75;
+    --teal-600: #0F6E56;
+    --teal-800: #085041;
+    --purple-50: #EEEDFE;
+    --purple-100: #CECBF6;
+    --purple-400: #7F77DD;
+    --purple-600: #534AB7;
+    --purple-800: #3C3489;
+    --amber-50: #FAEEDA;
+    --amber-100: #FAC775;
+    --amber-400: #BA7517;
+    --amber-600: #854F0B;
+    --coral-50: #FAECE7;
+    --coral-100: #F5C4B3;
+    --coral-400: #D85A30;
+    --coral-600: #993C1D;
+    --gray-50: #F1EFE8;
+    --gray-100: #D3D1C7;
+    --gray-200: #B4B2A9;
+    --gray-400: #888780;
+    --gray-600: #5F5E5A;
+    --white: #ffffff;
+    --text-dark: #2C2C2A;
+    --text-mid: #5F5E5A;
+    --radius-md: 8px;
+    --radius-lg: 12px;
+    --radius-xl: 16px;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    background: #f4f7f5;
+    color: var(--text-dark);
+    padding: 0;
+  }
+
+  /* HEADER */
+  .site-header {
+    background: var(--teal-600);
+    color: white;
+    padding: 28px 40px 24px;
+    border-bottom: 4px solid var(--teal-400);
+  }
+  .site-header .label {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    opacity: 0.8;
+    margin-bottom: 6px;
+  }
+  .site-header h1 {
+    font-size: 26px;
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+  .site-header p {
+    font-size: 15px;
+    opacity: 0.85;
+  }
+
+  /* NAV TABS */
+  .nav-tabs {
+    display: flex;
+    gap: 4px;
+    background: var(--teal-800);
+    padding: 0 40px;
+    overflow-x: auto;
+  }
+  .nav-tab {
+    padding: 12px 20px;
+    background: none;
+    border: none;
+    color: rgba(255,255,255,0.7);
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    white-space: nowrap;
+    border-bottom: 3px solid transparent;
+    transition: all 0.2s;
+  }
+  .nav-tab:hover { color: white; }
+  .nav-tab.active {
+    color: white;
+    border-bottom-color: var(--amber-100);
+  }
+
+  /* MAIN */
+  .main {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 36px 24px 60px;
+  }
+
+  /* SECTION */
+  .section { display: none; }
+  .section.active { display: block; }
+
+  .section-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 28px;
+  }
+  .section-badge {
+    background: var(--teal-50);
+    color: var(--teal-800);
+    border-radius: 50%;
+    width: 44px;
+    height: 44px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+  }
+  .section-title { font-size: 20px; font-weight: 700; color: var(--teal-800); }
+  .section-subtitle { font-size: 14px; color: var(--text-mid); margin-top: 2px; }
+
+  /* SCORE BAR */
+  .score-bar {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: white;
+    border: 1px solid var(--gray-100);
+    border-radius: var(--radius-lg);
+    padding: 10px 18px;
+    margin-bottom: 24px;
+    font-size: 14px;
+    color: var(--text-mid);
+  }
+  .score-bar strong { color: var(--teal-600); font-size: 18px; }
+
+  /* ===== ACTIVITY 1: MULTIPLE CHOICE ===== */
+  .question-block {
+    background: white;
+    border: 1px solid var(--gray-100);
+    border-radius: var(--radius-lg);
+    padding: 22px 24px;
+    margin-bottom: 16px;
+  }
+  .question-text {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 14px;
+    color: var(--text-dark);
+  }
+  .question-number {
+    display: inline-block;
+    background: var(--teal-400);
+    color: white;
+    border-radius: 50%;
+    width: 26px;
+    height: 26px;
+    text-align: center;
+    line-height: 26px;
+    font-size: 13px;
+    font-weight: 700;
+    margin-right: 10px;
+    flex-shrink: 0;
+  }
+  .options { display: flex; flex-direction: column; gap: 8px; }
+  .option-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 11px 16px;
+    border: 1.5px solid var(--gray-100);
+    border-radius: var(--radius-md);
+    background: var(--gray-50);
+    cursor: pointer;
+    font-size: 15px;
+    text-align: left;
+    transition: all 0.2s;
+    color: var(--text-dark);
+  }
+  .option-btn:hover { border-color: var(--teal-200); background: var(--teal-50); }
+  .option-btn.correct { background: var(--teal-50); border-color: var(--teal-400); color: var(--teal-800); }
+  .option-btn.wrong { background: var(--coral-50); border-color: var(--coral-400); color: var(--coral-600); }
+  .option-btn.disabled { pointer-events: none; opacity: 0.6; }
+  .option-btn.show-answer { background: var(--teal-50); border-color: var(--teal-200); }
+  .feedback-msg {
+    margin-top: 10px;
+    padding: 8px 14px;
+    border-radius: var(--radius-md);
+    font-size: 14px;
+    display: none;
+  }
+  .feedback-msg.show { display: block; }
+  .feedback-msg.correct { background: var(--teal-50); color: var(--teal-800); }
+  .feedback-msg.wrong { background: var(--coral-50); color: var(--coral-600); }
+
+  /* ===== ACTIVITY 2: DRAG AND DROP ===== */
+  .scenario-card {
+    background: var(--purple-50);
+    border: 1px solid var(--purple-100);
+    border-radius: var(--radius-lg);
+    padding: 18px 20px;
+    margin-bottom: 20px;
+  }
+  .scenario-card .person-name {
+    font-weight: 700;
+    font-size: 15px;
+    color: var(--purple-800);
+    margin-bottom: 6px;
+  }
+  .scenario-card p { font-size: 15px; color: var(--text-dark); }
+
+  .drag-items-pool {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 16px;
+    background: white;
+    border: 1.5px dashed var(--gray-200);
+    border-radius: var(--radius-lg);
+    margin-bottom: 20px;
+    min-height: 60px;
+  }
+  .drag-item {
+    background: var(--purple-400);
+    color: white;
+    padding: 8px 14px;
+    border-radius: var(--radius-md);
+    font-size: 14px;
+    font-weight: 500;
+    cursor: grab;
+    user-select: none;
+    transition: opacity 0.2s;
+  }
+  .drag-item:active { cursor: grabbing; opacity: 0.7; }
+  .drag-item.dragging { opacity: 0.4; }
+
+  .drop-zones { display: flex; flex-direction: column; gap: 12px; }
+  .drop-zone {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    background: white;
+    border: 1.5px solid var(--gray-100);
+    border-radius: var(--radius-lg);
+    padding: 14px 16px;
+  }
+  .drop-zone-label {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-mid);
+    min-width: 130px;
+    padding-top: 2px;
+  }
+  .drop-zone-area {
+    flex: 1;
+    min-height: 40px;
+    border: 1.5px dashed var(--gray-200);
+    border-radius: var(--radius-md);
+    padding: 6px 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    background: var(--gray-50);
+    transition: background 0.2s, border-color 0.2s;
+  }
+  .drop-zone-area.drag-over {
+    background: var(--teal-50);
+    border-color: var(--teal-400);
+  }
+
+  /* ===== ACTIVITY 3: GAP FILL ===== */
+  .gap-fill-text {
+    background: white;
+    border: 1px solid var(--gray-100);
+    border-radius: var(--radius-lg);
+    padding: 22px 24px;
+    font-size: 16px;
+    line-height: 2.1;
+    margin-bottom: 16px;
+  }
+  .gap-input {
+    display: inline-block;
+    border: none;
+    border-bottom: 2px solid var(--teal-400);
+    background: var(--teal-50);
+    padding: 2px 8px;
+    font-size: 15px;
+    font-family: inherit;
+    width: 140px;
+    text-align: center;
+    border-radius: 4px 4px 0 0;
+    outline: none;
+    color: var(--text-dark);
+    transition: background 0.2s;
+  }
+  .gap-input:focus { background: var(--teal-100); }
+  .gap-input.correct { background: var(--teal-50); border-bottom-color: var(--teal-600); color: var(--teal-800); }
+  .gap-input.wrong { background: var(--coral-50); border-bottom-color: var(--coral-400); color: var(--coral-600); }
+
+  .word-bank {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 16px;
+    background: var(--amber-50);
+    border: 1px solid var(--amber-100);
+    border-radius: var(--radius-lg);
+    margin-bottom: 16px;
+  }
+  .word-bank-label {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--amber-600);
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    width: 100%;
+    margin-bottom: 4px;
+  }
+  .word-chip {
+    background: white;
+    border: 1px solid var(--amber-100);
+    color: var(--amber-600);
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 500;
+  }
+
+  /* ===== ACTIVITY 4: TRUE / FALSE ===== */
+  .tf-question {
+    background: white;
+    border: 1px solid var(--gray-100);
+    border-radius: var(--radius-lg);
+    padding: 18px 22px;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+  }
+  .tf-question p { font-size: 15px; flex: 1; padding-top: 2px; }
+  .tf-btns { display: flex; gap: 6px; flex-shrink: 0; }
+  .tf-btn {
+    padding: 7px 18px;
+    border: 1.5px solid var(--gray-100);
+    border-radius: var(--radius-md);
+    background: var(--gray-50);
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    color: var(--text-dark);
+  }
+  .tf-btn:hover { border-color: var(--teal-200); background: var(--teal-50); }
+  .tf-btn.selected-true { background: var(--teal-400); color: white; border-color: var(--teal-400); }
+  .tf-btn.selected-false { background: var(--coral-400); color: white; border-color: var(--coral-400); }
+  .tf-btn.correct-answer { background: var(--teal-50); border-color: var(--teal-600); color: var(--teal-800); }
+  .tf-btn.wrong-answer { background: var(--coral-50); border-color: var(--coral-400); color: var(--coral-600); }
+
+  /* ===== ACTIVITY 5: SEQUENCING ===== */
+  .seq-items { display: flex; flex-direction: column; gap: 8px; margin-bottom: 16px; }
+  .seq-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: white;
+    border: 1.5px solid var(--gray-100);
+    border-radius: var(--radius-lg);
+    padding: 12px 16px;
+    cursor: grab;
+    transition: all 0.2s;
+    user-select: none;
+  }
+  .seq-item:active { cursor: grabbing; opacity: 0.8; }
+  .seq-item.dragging-seq { opacity: 0.5; border-style: dashed; }
+  .seq-item.drag-over-seq { border-color: var(--teal-400); background: var(--teal-50); }
+  .seq-handle {
+    color: var(--gray-400);
+    font-size: 18px;
+    cursor: grab;
+  }
+  .seq-number {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: var(--purple-50);
+    color: var(--purple-800);
+    font-weight: 700;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .seq-text { font-size: 15px; flex: 1; }
+
+  /* ===== ANSWER KEY ===== */
+  .answer-key {
+    background: white;
+    border: 1px solid var(--gray-100);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    margin-bottom: 16px;
+  }
+  .ak-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 22px;
+    background: var(--gray-50);
+    border: none;
+    width: 100%;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text-dark);
+    border-bottom: 1px solid var(--gray-100);
+    text-align: left;
+  }
+  .ak-toggle:hover { background: var(--teal-50); }
+  .ak-toggle .arrow { font-size: 12px; transition: transform 0.2s; }
+  .ak-toggle.open .arrow { transform: rotate(180deg); }
+  .ak-body { display: none; padding: 18px 22px; }
+  .ak-body.open { display: block; }
+  .ak-item {
+    display: flex;
+    gap: 12px;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--gray-50);
+    font-size: 14px;
+    align-items: flex-start;
+  }
+  .ak-item:last-child { border-bottom: none; }
+  .ak-q { font-weight: 600; color: var(--teal-600); min-width: 24px; }
+  .ak-a { color: var(--text-dark); }
+
+  /* SHARED BUTTONS */
+  .btn {
+    padding: 11px 24px;
+    border-radius: var(--radius-md);
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    transition: all 0.2s;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .btn-primary { background: var(--teal-600); color: white; }
+  .btn-primary:hover { background: var(--teal-800); }
+  .btn-secondary { background: white; color: var(--teal-600); border: 1.5px solid var(--teal-200); }
+  .btn-secondary:hover { background: var(--teal-50); }
+  .btn-row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 16px; }
+
+  .result-banner {
+    display: none;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 20px;
+    border-radius: var(--radius-lg);
+    margin-top: 16px;
+    font-size: 15px;
+    font-weight: 600;
+  }
+  .result-banner.show { display: flex; }
+  .result-banner.perfect { background: var(--teal-50); color: var(--teal-800); border: 1px solid var(--teal-200); }
+  .result-banner.good { background: var(--amber-50); color: var(--amber-600); border: 1px solid var(--amber-100); }
+  .result-banner.try-again { background: var(--coral-50); color: var(--coral-600); border: 1px solid var(--coral-100); }
+
+  /* Vocab activity */
+  .vocab-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+  .vocab-card {
+    background: white;
+    border: 1.5px solid var(--gray-100);
+    border-radius: var(--radius-lg);
+    padding: 16px 18px;
+    cursor: pointer;
+    transition: all 0.2s;
+    min-height: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .vocab-card:hover { border-color: var(--teal-200); background: var(--teal-50); }
+  .vocab-card.selected { border-color: var(--purple-400); background: var(--purple-50); }
+  .vocab-card.matched { border-color: var(--teal-400); background: var(--teal-50); pointer-events: none; }
+  .vocab-card.no-match { animation: shake 0.4s; border-color: var(--coral-400); background: var(--coral-50); }
+  .vocab-word { font-size: 16px; font-weight: 700; color: var(--text-dark); margin-bottom: 4px; }
+  .vocab-def { font-size: 14px; color: var(--text-mid); }
+
+  @keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    20% { transform: translateX(-6px); }
+    60% { transform: translateX(6px); }
+  }
+
+  .progress-dots {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 16px;
+  }
+  .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--gray-200);
+  }
+  .dot.done { background: var(--teal-400); }
+
+  @media (max-width: 600px) {
+    .site-header { padding: 20px 16px 18px; }
+    .nav-tabs { padding: 0 8px; }
+    .main { padding: 24px 12px 48px; }
+    .vocab-grid { grid-template-columns: 1fr; }
+    .tf-question { flex-direction: column; }
+    .drop-zone { flex-direction: column; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="label">EAL Level 2 &mdash; Learning Plan</div>
+  <h1>Lesson 3: Reviewing Your Learning Plan</h1>
+  <p>Five activities to practise key ideas from this lesson.</p>
+</header>
+
+<nav class="nav-tabs">
+  <button class="nav-tab active" onclick="showSection(0)">1 &nbsp;Multiple Choice</button>
+  <button class="nav-tab" onclick="showSection(1)">2 &nbsp;Matching</button>
+  <button class="nav-tab" onclick="showSection(2)">3 &nbsp;Gap Fill</button>
+  <button class="nav-tab" onclick="showSection(3)">4 &nbsp;True or False</button>
+  <button class="nav-tab" onclick="showSection(4)">5 &nbsp;Sequencing</button>
+  <button class="nav-tab" onclick="showSection(5)">&#128273; Answer Key</button>
+</nav>
+
+<main class="main">
+
+<!-- ===== SECTION 1: MULTIPLE CHOICE ===== -->
+<section class="section active" id="sec-0">
+  <div class="section-header">
+    <div class="section-badge">&#10067;</div>
+    <div>
+      <div class="section-title">Multiple Choice</div>
+      <div class="section-subtitle">Read the question. Click the best answer.</div>
+    </div>
+  </div>
+
+  <div class="score-bar">
+    Score: <strong id="mc-score">0 / 6</strong>
+    <span style="color:var(--gray-400)">|</span>
+    <span id="mc-progress" style="font-size:13px;">Answer all questions to see your result.</span>
+  </div>
+
+  <!-- Q1 -->
+  <div class="question-block" id="mc-q1">
+    <div class="question-text"><span class="question-number">1</span>Why is it important to check your learning plan regularly?</div>
+    <div class="options">
+      <button class="option-btn" onclick="mcAnswer(this,'mc-q1','a')">a) To make it look longer</button>
+      <button class="option-btn" onclick="mcAnswer(this,'mc-q1','b')">b) To make sure you are still working towards your goals</button>
+      <button class="option-btn" onclick="mcAnswer(this,'mc-q1','c')">c) To show your teacher</button>
+      <button class="option-btn" onclick="mcAnswer(this,'mc-q1','d')">d) To change all the dates</button>
+    </div>
+    <div class="feedback-msg" id="mc-q1-fb"></div>
+  </div>
+
+  <!-- Q2 -->
+  <div class="question-block" id="mc-q2">
+    <div class="question-text"><span class="question-number">2</span>Hana could not finish her steps in Term 1. What did she do?</div>
+    <div class="options">
+      <button class="option-btn" onclick="mcAnswer(this,'mc-q2','a')">a) She stopped her learning plan</button>
+      <button class="option-btn" onclick="mcAnswer(this,'mc-q2','b')">b) She asked her teacher for a new plan</button>
+      <button class="option-btn" onclick="mcAnswer(this,'mc-q2','c')">c) She changed the dates to Term 2</button>
+      <button class="option-btn" onclick="mcAnswer(this,'mc-q2','d')">d) She removed the steps from her plan</button>
+    </div>
+    <div class="feedback-msg" id="mc-q2-fb"></div>
+  </div>
+
+  <!-- Q3 -->
+  <div class="question-block" id="mc-q3">
+    <div class="question-text"><span class="question-number">3</span>Why was Hana's progress slow?</div>
+    <div class="options">
+      <button class="option-btn" onclick="mcAnswer(this,'mc-q3','a')">a) She did not want to study</button>
+      <button class="option-btn" onclick="mcAnswer(this,'mc-q3','b')">b) One of her children got very sick</button>
+      <button class="option-btn" onclick="mcAnswer(this,'mc-q3','c')">c) She forgot about her plan</button>
+      <button class="option-btn" onclick="mcAnswer(this,'mc-q3','d')">d) She changed her goal</button>
+    </div>
+    <div class="feedback-msg" id="mc-q3-fb"></div>
+  </div>
+
+  <!-- Q4 -->
+  <div class="question-block" id="mc-q4">
+    <div class="question-text"><span class="question-number">4</span>Farah added a new step to her plan. What was it?</div>
+    <div class="options">
+      <button class="option-btn" onclick="mcAnswer(this,'mc-q4','a')">a) Enrol in a free online computer course</button>
+      <button class="option-btn" onclick="mcAnswer(this,'mc-q4','b')">b) Buy a new computer</button>
+      <button class="option-btn" onclick="mcAnswer(this,'mc-q4','c')">c) Visit a university</button>
+      <button class="option-btn" onclick="mcAnswer(this,'mc-q4','d')">d) Ask a friend for help</button>
+    </div>
+    <div class="feedback-msg" id="mc-q4-fb"></div>
+  </div>
+
+  <!-- Q5 -->
+  <div class="question-block" id="mc-q5">
+    <div class="question-text"><span class="question-number">5</span>What does getting feedback mean?</div>
+    <div class="options">
+      <button class="option-btn" onclick="mcAnswer(this,'mc-q5','a')">a) Writing in your plan every day</button>
+      <button class="option-btn" onclick="mcAnswer(this,'mc-q5','b')">b) Asking someone for their response and advice</button>
+      <button class="option-btn" onclick="mcAnswer(this,'mc-q5','c')">c) Checking your marks at school</button>
+      <button class="option-btn" onclick="mcAnswer(this,'mc-q5','d')">d) Finishing all your steps</button>
+    </div>
+    <div class="feedback-msg" id="mc-q5-fb"></div>
+  </div>
+
+  <!-- Q6 -->
+  <div class="question-block" id="mc-q6">
+    <div class="question-text"><span class="question-number">6</span>What is the word "outcome"?</div>
+    <div class="options">
+      <button class="option-btn" onclick="mcAnswer(this,'mc-q6','a')">a) A new plan</button>
+      <button class="option-btn" onclick="mcAnswer(this,'mc-q6','b')">b) A barrier</button>
+      <button class="option-btn" onclick="mcAnswer(this,'mc-q6','c')">c) The final result</button>
+      <button class="option-btn" onclick="mcAnswer(this,'mc-q6','d')">d) A study session</button>
+    </div>
+    <div class="feedback-msg" id="mc-q6-fb"></div>
+  </div>
+
+  <div class="result-banner" id="mc-result"></div>
+</section>
+
+<!-- ===== SECTION 2: MATCHING / DRAG ===== -->
+<section class="section" id="sec-1">
+  <div class="section-header">
+    <div class="section-badge">&#127919;</div>
+    <div>
+      <div class="section-title">Matching: Drag and Drop</div>
+      <div class="section-subtitle">Drag each action to the correct person.</div>
+    </div>
+  </div>
+
+  <p style="font-size:15px; color:var(--text-mid); margin-bottom:16px;">Read the actions in the box. Drag them to the correct person below.</p>
+
+  <div class="drag-items-pool" id="drag-pool">
+    <div class="drag-item" draggable="true" data-id="a" ondragstart="dragStart(event)">Changed dates to Term 2</div>
+    <div class="drag-item" draggable="true" data-id="b" ondragstart="dragStart(event)">Could not go to conversation class</div>
+    <div class="drag-item" draggable="true" data-id="c" ondragstart="dragStart(event)">Added a free online computer course</div>
+    <div class="drag-item" draggable="true" data-id="d" ondragstart="dragStart(event)">Wanted to go to university</div>
+    <div class="drag-item" draggable="true" data-id="e" ondragstart="dragStart(event)">Talked to the TAFE librarian</div>
+    <div class="drag-item" draggable="true" data-id="f" ondragstart="dragStart(event)">Had a sick child at home</div>
+  </div>
+
+  <div class="drop-zones">
+    <div class="drop-zone">
+      <div class="drop-zone-label" style="color:var(--purple-800); font-size:15px;">&#128100; Hana</div>
+      <div class="drop-zone-area" id="zone-hana"
+        ondragover="dragOver(event)" ondragleave="dragLeave(event)" ondrop="drop(event,'zone-hana')"
+        data-accepts="a,b,f"></div>
+    </div>
+    <div class="drop-zone">
+      <div class="drop-zone-label" style="color:var(--teal-800); font-size:15px;">&#128100; Farah</div>
+      <div class="drop-zone-area" id="zone-farah"
+        ondragover="dragOver(event)" ondragleave="dragLeave(event)" ondrop="drop(event,'zone-farah')"
+        data-accepts="c,d,e"></div>
+    </div>
+  </div>
+
+  <div class="btn-row">
+    <button class="btn btn-primary" onclick="checkDrop()">&#10003; Check answers</button>
+    <button class="btn btn-secondary" onclick="resetDrop()">&#8635; Reset</button>
+  </div>
+  <div class="result-banner" id="drop-result"></div>
+</section>
+
+<!-- ===== SECTION 3: GAP FILL ===== -->
+<section class="section" id="sec-2">
+  <div class="section-header">
+    <div class="section-badge">&#9997;</div>
+    <div>
+      <div class="section-title">Gap Fill</div>
+      <div class="section-subtitle">Use the words in the box to complete the sentences.</div>
+    </div>
+  </div>
+
+  <div class="word-bank">
+    <div class="word-bank-label">Word bank</div>
+    <span class="word-chip">barrier</span>
+    <span class="word-chip">feedback</span>
+    <span class="word-chip">goals</span>
+    <span class="word-chip">progress</span>
+    <span class="word-chip">review</span>
+    <span class="word-chip">steps</span>
+    <span class="word-chip">outcome</span>
+    <span class="word-chip">dates</span>
+  </div>
+
+  <div class="gap-fill-text">
+    <p style="margin-bottom:12px;">
+      <span class="question-number">1</span>
+      You should check your learning plan regularly to make sure you are working towards your
+      <input class="gap-input" id="gf1" placeholder="?" autocomplete="off">.
+    </p>
+    <p style="margin-bottom:12px;">
+      <span class="question-number">2</span>
+      Sometimes your
+      <input class="gap-input" id="gf2" placeholder="?" autocomplete="off">
+      stops because of an unexpected problem.
+    </p>
+    <p style="margin-bottom:12px;">
+      <span class="question-number">3</span>
+      Getting sick is one kind of
+      <input class="gap-input" id="gf3" placeholder="?" autocomplete="off">
+      that can stop your progress.
+    </p>
+    <p style="margin-bottom:12px;">
+      <span class="question-number">4</span>
+      Hana had to change the
+      <input class="gap-input" id="gf4" placeholder="?" autocomplete="off">
+      in her learning plan to Term 2.
+    </p>
+    <p style="margin-bottom:12px;">
+      <span class="question-number">5</span>
+      If your progress is slow, you may need to add more
+      <input class="gap-input" id="gf5" placeholder="?" autocomplete="off">
+      to your plan.
+    </p>
+    <p style="margin-bottom:12px;">
+      <span class="question-number">6</span>
+      Getting
+      <input class="gap-input" id="gf6" placeholder="?" autocomplete="off">
+      means asking someone for their response and advice.
+    </p>
+    <p style="margin-bottom:12px;">
+      <span class="question-number">7</span>
+      When you finish your steps, you will have a
+      <input class="gap-input" id="gf7" placeholder="?" autocomplete="off">
+      meeting with your support person.
+    </p>
+    <p>
+      <span class="question-number">8</span>
+      The word
+      <input class="gap-input" id="gf8" placeholder="?" autocomplete="off">
+      means the final result.
+    </p>
+  </div>
+
+  <div class="btn-row">
+    <button class="btn btn-primary" onclick="checkGapFill()">&#10003; Check answers</button>
+    <button class="btn btn-secondary" onclick="resetGapFill()">&#8635; Reset</button>
+  </div>
+  <div class="score-bar" id="gf-score-bar" style="display:none; margin-top:16px;">
+    Score: <strong id="gf-score">0 / 8</strong>
+    <span id="gf-msg" style="font-size:13px;"></span>
+  </div>
+</section>
+
+<!-- ===== SECTION 4: TRUE OR FALSE ===== -->
+<section class="section" id="sec-3">
+  <div class="section-header">
+    <div class="section-badge">&#10004;</div>
+    <div>
+      <div class="section-title">True or False</div>
+      <div class="section-subtitle">Read each sentence. Click <strong>True</strong> or <strong>False</strong>.</div>
+    </div>
+  </div>
+
+  <div id="tf-questions">
+
+    <div class="tf-question" id="tf-q1">
+      <p><span class="question-number">1</span> You only need to check your learning plan once at the end of the year.</p>
+      <div class="tf-btns">
+        <button class="tf-btn" onclick="tfAnswer(this,'tf-q1','true')">True</button>
+        <button class="tf-btn" onclick="tfAnswer(this,'tf-q1','false')">False</button>
+      </div>
+    </div>
+
+    <div class="tf-question" id="tf-q2">
+      <p><span class="question-number">2</span> Getting sick can be an unexpected barrier to your learning plan.</p>
+      <div class="tf-btns">
+        <button class="tf-btn" onclick="tfAnswer(this,'tf-q2','true')">True</button>
+        <button class="tf-btn" onclick="tfAnswer(this,'tf-q2','false')">False</button>
+      </div>
+    </div>
+
+    <div class="tf-question" id="tf-q3">
+      <p><span class="question-number">3</span> Hana did not change anything in her learning plan after her child got sick.</p>
+      <div class="tf-btns">
+        <button class="tf-btn" onclick="tfAnswer(this,'tf-q3','true')">True</button>
+        <button class="tf-btn" onclick="tfAnswer(this,'tf-q3','false')">False</button>
+      </div>
+    </div>
+
+    <div class="tf-question" id="tf-q4">
+      <p><span class="question-number">4</span> Farah's long-term goal is to go to university.</p>
+      <div class="tf-btns">
+        <button class="tf-btn" onclick="tfAnswer(this,'tf-q4','true')">True</button>
+        <button class="tf-btn" onclick="tfAnswer(this,'tf-q4','false')">False</button>
+      </div>
+    </div>
+
+    <div class="tf-question" id="tf-q5">
+      <p><span class="question-number">5</span> The TAFE librarian told Farah about a free online computer course.</p>
+      <div class="tf-btns">
+        <button class="tf-btn" onclick="tfAnswer(this,'tf-q5','true')">True</button>
+        <button class="tf-btn" onclick="tfAnswer(this,'tf-q5','false')">False</button>
+      </div>
+    </div>
+
+    <div class="tf-question" id="tf-q6">
+      <p><span class="question-number">6</span> Feedback can give you advice on how to overcome barriers.</p>
+      <div class="tf-btns">
+        <button class="tf-btn" onclick="tfAnswer(this,'tf-q6','true')">True</button>
+        <button class="tf-btn" onclick="tfAnswer(this,'tf-q6','false')">False</button>
+      </div>
+    </div>
+
+    <div class="tf-question" id="tf-q7">
+      <p><span class="question-number">7</span> If your progress is slow, you should stop your learning plan completely.</p>
+      <div class="tf-btns">
+        <button class="tf-btn" onclick="tfAnswer(this,'tf-q7','true')">True</button>
+        <button class="tf-btn" onclick="tfAnswer(this,'tf-q7','false')">False</button>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="btn-row">
+    <button class="btn btn-primary" onclick="checkTF()">&#10003; Check all answers</button>
+    <button class="btn btn-secondary" onclick="resetTF()">&#8635; Reset</button>
+  </div>
+  <div class="score-bar" id="tf-score-bar" style="display:none; margin-top:16px;">
+    Score: <strong id="tf-score">0 / 7</strong>
+    <span id="tf-msg" style="font-size:13px;"></span>
+  </div>
+</section>
+
+<!-- ===== SECTION 5: SEQUENCING ===== -->
+<section class="section" id="sec-4">
+  <div class="section-header">
+    <div class="section-badge">&#128260;</div>
+    <div>
+      <div class="section-title">Put It in Order</div>
+      <div class="section-subtitle">Drag the steps into the correct order for Farah's story.</div>
+    </div>
+  </div>
+
+  <p style="font-size:15px; color:var(--text-mid); margin-bottom:16px;">Number 1 should be first. Drag to rearrange the sentences.</p>
+
+  <div class="seq-items" id="seq-list">
+    <div class="seq-item" draggable="true" data-correct="4" ondragstart="seqDragStart(event)" ondragover="seqDragOver(event)" ondrop="seqDrop(event)" ondragleave="seqLeave(event)">
+      <span class="seq-handle">&#8942;&#8942;</span>
+      <span class="seq-number">?</span>
+      <span class="seq-text">She enrolled in a free online computer course.</span>
+    </div>
+    <div class="seq-item" draggable="true" data-correct="1" ondragstart="seqDragStart(event)" ondragover="seqDragOver(event)" ondrop="seqDrop(event)" ondragleave="seqLeave(event)">
+      <span class="seq-handle">&#8942;&#8942;</span>
+      <span class="seq-number">?</span>
+      <span class="seq-text">Farah's long-term goal is to go to university.</span>
+    </div>
+    <div class="seq-item" draggable="true" data-correct="3" ondragstart="seqDragStart(event)" ondragover="seqDragOver(event)" ondrop="seqDrop(event)" ondragleave="seqLeave(event)">
+      <span class="seq-handle">&#8942;&#8942;</span>
+      <span class="seq-number">?</span>
+      <span class="seq-text">She talked to the TAFE librarian about her problem.</span>
+    </div>
+    <div class="seq-item" draggable="true" data-correct="5" ondragstart="seqDragStart(event)" ondragover="seqDragOver(event)" ondrop="seqDrop(event)" ondragleave="seqLeave(event)">
+      <span class="seq-handle">&#8942;&#8942;</span>
+      <span class="seq-number">?</span>
+      <span class="seq-text">Farah updated her learning plan with the new step.</span>
+    </div>
+    <div class="seq-item" draggable="true" data-correct="2" ondragstart="seqDragStart(event)" ondragover="seqDragOver(event)" ondrop="seqDrop(event)" ondragleave="seqLeave(event)">
+      <span class="seq-handle">&#8942;&#8942;</span>
+      <span class="seq-number">?</span>
+      <span class="seq-text">Her progress on computer skills was very slow.</span>
+    </div>
+  </div>
+
+  <div class="btn-row">
+    <button class="btn btn-primary" onclick="checkSeq()">&#10003; Check order</button>
+    <button class="btn btn-secondary" onclick="shuffleSeq()">&#8635; Shuffle again</button>
+  </div>
+  <div class="result-banner" id="seq-result"></div>
+</section>
+
+<!-- ===== SECTION 6: ANSWER KEY ===== -->
+<section class="section" id="sec-5">
+  <div class="section-header">
+    <div class="section-badge">&#128273;</div>
+    <div>
+      <div class="section-title">Answer Key</div>
+      <div class="section-subtitle">For teachers and self-study. Click each activity to see the answers.</div>
+    </div>
+  </div>
+
+  <!-- MC -->
+  <div class="answer-key">
+    <button class="ak-toggle" onclick="toggleAK(this)">
+      Activity 1: Multiple Choice
+      <span class="arrow">&#9660;</span>
+    </button>
+    <div class="ak-body">
+      <div class="ak-item"><span class="ak-q">1.</span><span class="ak-a"><strong>b)</strong> To make sure you are still working towards your goals</span></div>
+      <div class="ak-item"><span class="ak-q">2.</span><span class="ak-a"><strong>c)</strong> She changed the dates to Term 2</span></div>
+      <div class="ak-item"><span class="ak-q">3.</span><span class="ak-a"><strong>b)</strong> One of her children got very sick</span></div>
+      <div class="ak-item"><span class="ak-q">4.</span><span class="ak-a"><strong>a)</strong> Enrol in a free online computer course</span></div>
+      <div class="ak-item"><span class="ak-q">5.</span><span class="ak-a"><strong>b)</strong> Asking someone for their response and advice</span></div>
+      <div class="ak-item"><span class="ak-q">6.</span><span class="ak-a"><strong>c)</strong> The final result</span></div>
+    </div>
+  </div>
+
+  <!-- Drag -->
+  <div class="answer-key">
+    <button class="ak-toggle" onclick="toggleAK(this)">
+      Activity 2: Matching
+      <span class="arrow">&#9660;</span>
+    </button>
+    <div class="ak-body">
+      <div class="ak-item"><span class="ak-q">Hana:</span><span class="ak-a">Changed dates to Term 2 &nbsp;|&nbsp; Could not go to conversation class &nbsp;|&nbsp; Had a sick child at home</span></div>
+      <div class="ak-item"><span class="ak-q">Farah:</span><span class="ak-a">Added a free online computer course &nbsp;|&nbsp; Wanted to go to university &nbsp;|&nbsp; Talked to the TAFE librarian</span></div>
+    </div>
+  </div>
+
+  <!-- Gap fill -->
+  <div class="answer-key">
+    <button class="ak-toggle" onclick="toggleAK(this)">
+      Activity 3: Gap Fill
+      <span class="arrow">&#9660;</span>
+    </button>
+    <div class="ak-body">
+      <div class="ak-item"><span class="ak-q">1.</span><span class="ak-a">goals</span></div>
+      <div class="ak-item"><span class="ak-q">2.</span><span class="ak-a">progress</span></div>
+      <div class="ak-item"><span class="ak-q">3.</span><span class="ak-a">barrier</span></div>
+      <div class="ak-item"><span class="ak-q">4.</span><span class="ak-a">dates</span></div>
+      <div class="ak-item"><span class="ak-q">5.</span><span class="ak-a">steps</span></div>
+      <div class="ak-item"><span class="ak-q">6.</span><span class="ak-a">feedback</span></div>
+      <div class="ak-item"><span class="ak-q">7.</span><span class="ak-a">review</span></div>
+      <div class="ak-item"><span class="ak-q">8.</span><span class="ak-a">outcome</span></div>
+    </div>
+  </div>
+
+  <!-- T/F -->
+  <div class="answer-key">
+    <button class="ak-toggle" onclick="toggleAK(this)">
+      Activity 4: True or False
+      <span class="arrow">&#9660;</span>
+    </button>
+    <div class="ak-body">
+      <div class="ak-item"><span class="ak-q">1.</span><span class="ak-a"><strong>False</strong> &mdash; You should check your plan regularly, not just once.</span></div>
+      <div class="ak-item"><span class="ak-q">2.</span><span class="ak-a"><strong>True</strong></span></div>
+      <div class="ak-item"><span class="ak-q">3.</span><span class="ak-a"><strong>False</strong> &mdash; Hana changed the dates to Term 2.</span></div>
+      <div class="ak-item"><span class="ak-q">4.</span><span class="ak-a"><strong>True</strong></span></div>
+      <div class="ak-item"><span class="ak-q">5.</span><span class="ak-a"><strong>True</strong></span></div>
+      <div class="ak-item"><span class="ak-q">6.</span><span class="ak-a"><strong>True</strong></span></div>
+      <div class="ak-item"><span class="ak-q">7.</span><span class="ak-a"><strong>False</strong> &mdash; You should add steps or change dates, not stop.</span></div>
+    </div>
+  </div>
+
+  <!-- Sequencing -->
+  <div class="answer-key">
+    <button class="ak-toggle" onclick="toggleAK(this)">
+      Activity 5: Sequencing
+      <span class="arrow">&#9660;</span>
+    </button>
+    <div class="ak-body">
+      <div class="ak-item"><span class="ak-q">1.</span><span class="ak-a">Farah's long-term goal is to go to university.</span></div>
+      <div class="ak-item"><span class="ak-q">2.</span><span class="ak-a">Her progress on computer skills was very slow.</span></div>
+      <div class="ak-item"><span class="ak-q">3.</span><span class="ak-a">She talked to the TAFE librarian about her problem.</span></div>
+      <div class="ak-item"><span class="ak-q">4.</span><span class="ak-a">She enrolled in a free online computer course.</span></div>
+      <div class="ak-item"><span class="ak-q">5.</span><span class="ak-a">Farah updated her learning plan with the new step.</span></div>
+    </div>
+  </div>
+
+</section>
+
+</main>
+
+<script>
+// ===== NAVIGATION =====
+function showSection(i) {
+  document.querySelectorAll('.section').forEach((s,idx) => s.classList.toggle('active', idx===i));
+  document.querySelectorAll('.nav-tab').forEach((t,idx) => t.classList.toggle('active', idx===i));
+}
+
+// ===== MULTIPLE CHOICE =====
+const mcAnswers = { 'mc-q1':'b','mc-q2':'c','mc-q3':'b','mc-q4':'a','mc-q5':'b','mc-q6':'c' };
+const mcMessages = {
+  'mc-q1': { b:'Correct! Checking your plan helps you stay on track.' },
+  'mc-q2': { c:'Correct! Hana moved her steps to Term 2.' },
+  'mc-q3': { b:"Correct! Hana's child got very sick." },
+  'mc-q4': { a:'Correct! The TAFE librarian told Farah about the course.' },
+  'mc-q5': { b:'Correct! Feedback is asking for someone\'s response and advice.' },
+  'mc-q6': { c:"Correct! 'Outcome' means the final result." }
+};
+let mcDone = {};
+
+function mcAnswer(btn, qid, choice) {
+  if (mcDone[qid]) return;
+  mcDone[qid] = true;
+  const correct = mcAnswers[qid];
+  const opts = btn.closest('.question-block').querySelectorAll('.option-btn');
+  opts.forEach(o => {
+    o.classList.add('disabled');
+    const letter = o.getAttribute('onclick').match(/'([a-d])'\)/)[1];
+    if (letter === correct) o.classList.add('show-answer');
+  });
+  const fb = document.getElementById(qid+'-fb');
+  if (choice === correct) {
+    btn.classList.add('correct');
+    fb.textContent = '✓ ' + mcMessages[qid][correct];
+    fb.className = 'feedback-msg show correct';
+  } else {
+    btn.classList.add('wrong');
+    fb.textContent = '✗ Not quite. The correct answer is highlighted.';
+    fb.className = 'feedback-msg show wrong';
+  }
+  updateMCScore();
+}
+
+function updateMCScore() {
+  const total = Object.keys(mcAnswers).length;
+  let correct = 0;
+  Object.keys(mcDone).forEach(qid => {
+    const block = document.getElementById(qid);
+    if (block.querySelector('.option-btn.correct')) correct++;
+  });
+  document.getElementById('mc-score').textContent = correct + ' / ' + total;
+  const done = Object.keys(mcDone).length;
+  if (done === total) {
+    const r = document.getElementById('mc-result');
+    r.className = 'result-banner show ' + (correct===total ? 'perfect' : correct>=4 ? 'good' : 'try-again');
+    r.textContent = correct===total ? '🎉 Excellent! You got all 6 correct!' : correct>=4 ? '👍 Well done! Review the questions you missed.' : '📚 Keep practising! Check the answer key to help.';
+    document.getElementById('mc-progress').textContent = 'Finished!';
+  } else {
+    document.getElementById('mc-progress').textContent = done + ' of ' + total + ' answered.';
+  }
+}
+
+// ===== DRAG AND DROP =====
+let dragId = null;
+let dragSource = null;
+
+function dragStart(e) {
+  dragId = e.target.dataset.id;
+  dragSource = e.target.parentElement.id;
+  e.target.classList.add('dragging');
+  e.dataTransfer.effectAllowed = 'move';
+}
+
+function dragOver(e) {
+  e.preventDefault();
+  e.currentTarget.classList.add('drag-over');
+}
+function dragLeave(e) { e.currentTarget.classList.remove('drag-over'); }
+
+function drop(e, zoneId) {
+  e.preventDefault();
+  e.currentTarget.classList.remove('drag-over');
+  const pool = document.getElementById('drag-pool');
+  const zone = document.getElementById(zoneId);
+  const dragEl = document.querySelector('[data-id="'+dragId+'"]');
+  if (dragEl) {
+    dragEl.classList.remove('dragging');
+    zone.appendChild(dragEl);
+  }
+}
+
+function checkDrop() {
+  const hana = document.getElementById('zone-hana');
+  const farah = document.getElementById('zone-farah');
+  const hanaCorrect = ['a','b','f'];
+  const farahCorrect = ['c','d','e'];
+  let score = 0; let total = 6;
+
+  hana.querySelectorAll('.drag-item').forEach(item => {
+    const id = item.dataset.id;
+    if (hanaCorrect.includes(id)) { item.style.background='var(--teal-400)'; score++; }
+    else { item.style.background='var(--coral-400)'; }
+  });
+  farah.querySelectorAll('.drag-item').forEach(item => {
+    const id = item.dataset.id;
+    if (farahCorrect.includes(id)) { item.style.background='var(--teal-400)'; score++; }
+    else { item.style.background='var(--coral-400)'; }
+  });
+
+  const r = document.getElementById('drop-result');
+  r.className = 'result-banner show ' + (score===total ? 'perfect' : score>=4 ? 'good' : 'try-again');
+  r.textContent = score + ' / ' + total + ' correct. ' + (score===total ? '🎉 Perfect match!' : score>=4 ? '👍 Almost there!' : '📚 Try again using the answer key.');
+}
+
+function resetDrop() {
+  const pool = document.getElementById('drag-pool');
+  document.querySelectorAll('.drag-item').forEach(item => {
+    item.style.background = 'var(--purple-400)';
+    pool.appendChild(item);
+  });
+  document.getElementById('drop-result').className = 'result-banner';
+}
+
+// ===== GAP FILL =====
+const gfAnswers = { gf1:'goals', gf2:'progress', gf3:'barrier', gf4:'dates', gf5:'steps', gf6:'feedback', gf7:'review', gf8:'outcome' };
+
+function checkGapFill() {
+  let score = 0;
+  Object.keys(gfAnswers).forEach(id => {
+    const input = document.getElementById(id);
+    const val = input.value.trim().toLowerCase();
+    const ans = gfAnswers[id];
+    if (val === ans) { input.classList.add('correct'); input.classList.remove('wrong'); score++; }
+    else { input.classList.add('wrong'); input.classList.remove('correct'); input.placeholder = ans; }
+  });
+  const bar = document.getElementById('gf-score-bar');
+  bar.style.display = 'flex';
+  document.getElementById('gf-score').textContent = score + ' / 8';
+  const msg = document.getElementById('gf-msg');
+  msg.textContent = score===8 ? '🎉 All correct!' : score>=6 ? '👍 Almost there!' : '📚 Check the highlighted words and try again.';
+}
+
+function resetGapFill() {
+  Object.keys(gfAnswers).forEach(id => {
+    const input = document.getElementById(id);
+    input.value = '';
+    input.placeholder = '?';
+    input.className = 'gap-input';
+  });
+  document.getElementById('gf-score-bar').style.display = 'none';
+}
+
+// ===== TRUE / FALSE =====
+const tfAnswers = { 'tf-q1':'false','tf-q2':'true','tf-q3':'false','tf-q4':'true','tf-q5':'true','tf-q6':'true','tf-q7':'false' };
+let tfSelected = {};
+
+function tfAnswer(btn, qid, choice) {
+  if (document.getElementById(qid).dataset.done) return;
+  tfSelected[qid] = choice;
+  const btns = btn.closest('.tf-btns').querySelectorAll('.tf-btn');
+  btns.forEach(b => { b.classList.remove('selected-true','selected-false'); });
+  btn.classList.add(choice==='true' ? 'selected-true' : 'selected-false');
+}
+
+function checkTF() {
+  let score = 0;
+  Object.keys(tfAnswers).forEach(qid => {
+    const q = document.getElementById(qid);
+    const correct = tfAnswers[qid];
+    const chosen = tfSelected[qid];
+    const btns = q.querySelectorAll('.tf-btn');
+    q.dataset.done = '1';
+    btns.forEach(b => {
+      const val = b.textContent.toLowerCase();
+      b.classList.remove('selected-true','selected-false');
+      if (val === correct) b.classList.add('correct-answer');
+      else if (val === chosen && chosen !== correct) b.classList.add('wrong-answer');
+    });
+    if (chosen === correct) score++;
+  });
+  const bar = document.getElementById('tf-score-bar');
+  bar.style.display = 'flex';
+  document.getElementById('tf-score').textContent = score + ' / 7';
+  const msg = document.getElementById('tf-msg');
+  msg.textContent = score===7 ? '🎉 Perfect score!' : score>=5 ? '👍 Good job!' : '📚 Review the false answers above.';
+}
+
+function resetTF() {
+  tfSelected = {};
+  document.querySelectorAll('.tf-question').forEach(q => {
+    delete q.dataset.done;
+    q.querySelectorAll('.tf-btn').forEach(b => b.className='tf-btn');
+  });
+  document.getElementById('tf-score-bar').style.display = 'none';
+}
+
+// ===== SEQUENCING =====
+let draggedSeq = null;
+
+function seqDragStart(e) {
+  draggedSeq = e.currentTarget;
+  draggedSeq.classList.add('dragging-seq');
+  e.dataTransfer.effectAllowed = 'move';
+}
+
+function seqDragOver(e) {
+  e.preventDefault();
+  e.currentTarget.classList.add('drag-over-seq');
+}
+function seqLeave(e) { e.currentTarget.classList.remove('drag-over-seq'); }
+
+function seqDrop(e) {
+  e.preventDefault();
+  const target = e.currentTarget;
+  target.classList.remove('drag-over-seq');
+  if (draggedSeq && draggedSeq !== target) {
+    const list = document.getElementById('seq-list');
+    const items = [...list.children];
+    const dragIdx = items.indexOf(draggedSeq);
+    const targetIdx = items.indexOf(target);
+    if (dragIdx < targetIdx) list.insertBefore(draggedSeq, target.nextSibling);
+    else list.insertBefore(draggedSeq, target);
+  }
+  if (draggedSeq) draggedSeq.classList.remove('dragging-seq');
+  draggedSeq = null;
+  updateSeqNumbers();
+}
+
+function updateSeqNumbers() {
+  const items = document.querySelectorAll('#seq-list .seq-item');
+  items.forEach((item,i) => {
+    item.querySelector('.seq-number').textContent = i+1;
+  });
+}
+
+function checkSeq() {
+  const items = [...document.querySelectorAll('#seq-list .seq-item')];
+  let correct = 0;
+  items.forEach((item,i) => {
+    const expected = parseInt(item.dataset.correct);
+    if (expected === i+1) {
+      item.style.borderColor='var(--teal-400)';
+      item.style.background='var(--teal-50)';
+      correct++;
+    } else {
+      item.style.borderColor='var(--coral-400)';
+      item.style.background='var(--coral-50)';
+    }
+  });
+  const r = document.getElementById('seq-result');
+  r.className = 'result-banner show ' + (correct===5 ? 'perfect' : correct>=3 ? 'good' : 'try-again');
+  r.textContent = correct + ' / 5 in the correct position. ' + (correct===5 ? '🎉 Perfect order!' : correct>=3 ? '👍 Nearly there! Adjust the highlighted ones.' : '📚 Check the answer key and try again.');
+}
+
+function shuffleSeq() {
+  const list = document.getElementById('seq-list');
+  const items = [...list.children];
+  for (let i=items.length-1;i>0;i--) {
+    const j=Math.floor(Math.random()*(i+1));
+    list.insertBefore(items[j], items[i]);
+  }
+  items.forEach(item => {
+    item.style.borderColor='';
+    item.style.background='';
+  });
+  updateSeqNumbers();
+  document.getElementById('seq-result').className = 'result-banner';
+}
+
+function toggleAK(btn) {
+  btn.classList.toggle('open');
+  const body = btn.nextElementSibling;
+  body.classList.toggle('open');
+}
+
+// Init seq numbers
+updateSeqNumbers();
+</script>
+</body>
+</html>
